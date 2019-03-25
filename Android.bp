@@ -39,14 +39,14 @@ cc_library_shared {
         "src/Socket.cpp",
         "src/WebSocket.cpp",
     ],
-
-    include_dirs: [
-        "external/boringssl/include",
-        "external/zlib",
+    export_include_dirs: [
+        "src",
     ],
-
+    export_shared_lib_headers: [
+        "libz",
+        "libssl",
+    ],
     static_libs: ["libjsoncpp"],
-
     cflags: [
         "-std=c++11",
         "-O3",
